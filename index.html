@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>莎士比亞 A–Z｜中世紀油畫詞彙圖鑑</title>
+<style>
+:root{--ink:#30251e;--wine:#642f32;--gold:#b58a45;--parch:#f1e3c4;--paper:#e8d6ae;--olive:#596044;--muted:#74634e}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Georgia,"Noto Serif TC",serif;background-color:#30251e;background-image:radial-gradient(ellipse at 20% 10%,#756044 0,transparent 35%),radial-gradient(ellipse at 90% 80%,#5a4938 0,transparent 40%);background-attachment:fixed}
+header{padding:54px 18px 46px;text-align:center;color:#f6e8c9;background:linear-gradient(135deg,#33271f,#5b3030 48%,#3d442e);border-bottom:5px double #b58a45;position:relative}
+header:before{content:"✦ ❧ ✦";display:block;color:#d5b36d;letter-spacing:12px;font-size:22px}
+.kicker{font:11px Arial,sans-serif;letter-spacing:4px;color:#d9bd7d;margin-top:12px}
+h1{font-size:clamp(30px,5vw,50px);margin:12px 0;color:#f7e8c6;text-shadow:2px 3px #241b18}
+.subtitle{font:14px/1.9 Arial,sans-serif;color:#e7d8b8}
+main{max-width:1160px;margin:auto;padding:28px 18px 60px}
+.intro{background:linear-gradient(135deg,#f3e7cb,#e4d0a9);border:4px double #9b783d;outline:1px solid #e9d6aa;outline-offset:4px;padding:18px 22px;display:flex;gap:16px;align-items:center;margin:8px 0 28px;box-shadow:0 8px 22px #130d0980}
+.intro .seal{font-size:42px;color:#8d672f}.intro p{margin:0;font:14px/1.8 Arial,sans-serif;color:#584633}
+.controls{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}
+input,select{padding:12px 14px;border:2px solid #9c7b48;background:#f1e3c4;color:#38291f;border-radius:3px;font:14px Arial,sans-serif}input{flex:1;min-width:220px}
+.alphabet{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 26px}
+.alphabet button{padding:8px 11px;background:#e8d6ae;border:2px solid #9c7b48;color:#4a3427;cursor:pointer;font-weight:bold;border-radius:2px;box-shadow:2px 2px #1b130d}
+.alphabet button.active,.alphabet button:hover{background:#6b3434;color:#f8e8c3;border-color:#c4a15c}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+.card{background:#e9d7b1;border:5px double #9b783d;outline:1px solid #d1b77c;outline-offset:-10px;box-shadow:0 8px 24px #120c08a8;overflow:hidden;transition:.2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 13px 28px #100a07}
+.art{height:170px;display:grid;place-items:center;position:relative;overflow:hidden;color:#f2d58d;background:linear-gradient(145deg,#27352c,#6b4b32 45%,#7b3433);border-bottom:4px double #b58a45}
+.art:before{content:"";position:absolute;inset:10px;border:1px solid #d4b56d;box-shadow:inset 0 0 30px #17100b88}
+.art:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 17px,#f5d99b0c 18px 20px,transparent 22px 34px);pointer-events:none}
+.symbol{font-size:65px;z-index:1;filter:sepia(.35) drop-shadow(2px 3px 2px #160e0a);text-shadow:0 0 12px #d5a85b66}
+.artlabel{position:absolute;bottom:12px;z-index:2;font:10px Arial,sans-serif;letter-spacing:3px;color:#f3dca8}
+.body{padding:17px 18px 20px}
+.letter{font:11px Arial,sans-serif;letter-spacing:3px;color:#8a4a36;font-weight:bold}
+.word{font-size:25px;color:#482c27;margin:4px 0}.pron{font:12px Arial,sans-serif;color:#78654c}
+.meaning{font:bold 14px Arial,sans-serif;margin:9px 0 5px}
+.desc{font:13px/1.7 Arial,sans-serif;color:#66533f;margin-bottom:12px}
+.section{border-top:1px solid #bda477;padding-top:10px;margin-top:10px}
+.stitle{font:bold 11px Arial,sans-serif;letter-spacing:1px;color:#804137;margin-bottom:6px}
+.quote{font:italic 14px/1.65 Georgia,serif;color:#3f3027}
+.source{font:11px/1.6 Arial,sans-serif;color:#796347;margin-top:5px}
+.explain{font:13px/1.75 Arial,sans-serif;color:#594936}
+.actions{display:flex;gap:8px;margin-top:13px}
+button.action,.primary{background:#603638;color:#f5e7c6;border:1px solid #b58a45;padding:9px 12px;cursor:pointer;font:12px Arial,sans-serif}
+button.secondary{background:#d7c39a;color:#4a3427}
+.quiz{margin-top:38px;padding:24px;background:#e9d7b1;border:5px double #9b783d;box-shadow:0 8px 24px #120c08a8}
+.quiz h2{margin:0;color:#603638}.quiz p{font:13px/1.7 Arial,sans-serif;color:#66533f}
+.question{font-size:20px;margin:18px 0}.answers{display:flex;gap:9px;flex-wrap:wrap}
+.answers button{padding:10px 14px;background:#f4e8ce;border:1px solid #a98a56;color:#493528;cursor:pointer}
+#feedback{font:bold 13px Arial,sans-serif;min-height:22px;margin-top:12px}
+.primary{margin-top:10px}footer{text-align:center;color:#d9c39a;padding:25px;font:11px Arial,sans-serif;letter-spacing:1px}
+.empty{grid-column:1/-1;text-align:center;padding:40px;color:#f1e3c4}
+@media(max-width:560px){header{padding:40px 14px}.intro{align-items:flex-start}.grid{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header><div class="kicker">THE SHAKESPEARE MEDIEVAL PAINTING VOCABULARY</div>
+<h1>莎士比亞 A–Z 經典詞彙圖鑑</h1>
+<div class="subtitle">在古典畫框、金箔與深沉色彩中，閱讀莎士比亞的語言。<br>Twenty-six words, illuminated by the world of Shakespeare.</div></header>
+<main>
+<section class="intro"><div class="seal">✥</div><p><b>閱讀方式｜WORDS AS PAINTINGS</b><br>每張卡片包含單字、莎士比亞原文摘句、文學簡析，以及專屬中世紀油畫的構圖與色彩設計。摘句保留原文拼字；不同版本的標點可能略有差異。X 字卡以相關主題配對，並特別註明不是莎士比亞原句中的 X 開頭詞。</p></section>
+<div class="controls"><input id="search" placeholder="搜尋單字、中文意思或作品名稱…" type="search"><select id="sort"><option value="az">依 A–Z 排序</option><option value="za">依 Z–A 排序</option></select></div>
+<nav class="alphabet" id="alphabet"></nav><section class="grid" id="cards"></section>
+<section class="quiz"><h2>✥ 詞彙小測驗</h2><p>讀過原文後，來檢查一下記憶吧！</p><div class="question" id="question"></div><div class="answers" id="answers"></div><div id="feedback"></div><button class="primary" id="next">下一題</button></section>
+</main><footer>✦ SHAKESPEARE · MEDIEVAL ART · A–Z ✦</footer>
+<script>
+const words=[
+["A","Ambition","/æmˈbɪʃən/","野心；抱負","對權力、成就或目標的強烈渴望。","I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on th'other.","Macbeth, Act 1, Scene 7","♛","這段獨白呈現 Macbeth 對權力的渴望，也顯示野心可能超越理智，最後反噬自己。","以王冠作為畫面中心，背景用深紅與墨綠交疊；向上伸展的金色藤蔓象徵野心攀升，暗部則預示代價。"],
+["B","Betrayal","/bɪˈtreɪəl/","背叛","違背信任或忠誠的行為。","Et tu, Brute? Then fall, Caesar!","Julius Caesar, Act 3, Scene 1","🗡","Caesar 發現 Brutus 也參與背叛，短短一句話讓政治陰謀轉為私人情感的崩解。","以兩把交錯的短劍作為象徵，人物置於昏暗拱廊；暗紅色陰影與金色光線形成衝突，強調信任破裂。"],
+["C","Crown","/kraʊn/","王冠；王權","象徵統治權、身分與責任。","Uneasy lies the head that wears a crown.","Henry IV, Part 2, Act 3, Scene 1","♛","王冠不只是權力象徵，也代表統治者承受的焦慮與重擔。","金箔王冠置於厚重的暗色天鵝絨上，背景以沉靜的藍綠色描繪王室空間，讓華麗與孤獨並存。"],
+["D","Dagger","/ˈdæɡər/","匕首","短刀；在戲劇中象徵危險與內心衝突。","Is this a dagger which I see before me, / The handle toward my hand?","Macbeth, Act 2, Scene 1","⚔","Macbeth 看見幻象中的匕首，顯示他的想像、恐懼與犯罪意念交纏。","匕首懸浮於幽暗走廊，冷銀色刀身映出一線微光；厚重陰影與斜向筆觸營造心理不安。"],
+["E","Envy","/ˈenvi/","嫉妒","因他人擁有某種優勢而感到不平。","O, beware, my lord, of jealousy; / It is the green-eyed monster which doth mock / The meat it feeds on.","Othello, Act 3, Scene 3","🐍","Iago 把嫉妒比喻成綠眼怪物，說明猜忌會吞噬人的理性與信任。","以綠色蛇形影子環繞人物，背景使用深橄欖綠與褐色；局部金光落在眼睛上，讓嫉妒具象化。"],
+["F","Fate","/feɪt/","命運","被認為會發生、難以改變的人生安排。","The fault, dear Brutus, is not in our stars, / But in ourselves, that we are underlings.","Julius Caesar, Act 1, Scene 2","✦","Cassius 質疑人是否只能受命運擺布，將焦點轉向個人的選擇與責任。","星空與人物剪影形成上下對照；深藍夜色點綴金箔星辰，象徵命運與自主意志的拉扯。"],
+["G","Ghost","/ɡoʊst/","鬼魂；幽靈","常帶出秘密、記憶或未解的往事。","Angels and ministers of grace defend us!","Hamlet, Act 1, Scene 4","☾","Hamlet 面對父王鬼魂時的驚懼，讓超自然現象與王室未解的秘密進入故事。","以霧白人物輪廓浮現在城堡城牆上，月光使用灰藍與銀白，遠處燭火微弱，營造神祕氛圍。"],
+["H","Honor","/ˈɑːnər/","榮譽；名譽","值得尊敬的品格，以及對承諾的重視。","Mine honour is my life; both grow in one; / Take honour from me, and my life is done.","Richard II, Act 1, Scene 1","⚜","此句把榮譽與生命連結，呈現人物將名譽視為自我價值核心的觀念。","人物身披深紅披風，胸前有金色徽章；端正姿態與對稱構圖呼應榮譽、尊嚴與騎士精神。"],
+["I","Intrigue","/ɪnˈtriːɡ/","陰謀；密謀","為達成目的而安排的秘密計畫。","I am not what I am.","Othello, Act 1, Scene 1","♟","Iago 以矛盾語句暗示自己的偽裝，揭露戲劇中操控、欺瞞與秘密計畫的核心。","以棋盤、半掩面具和交錯的影子構圖；暗金、酒紅與黑褐色營造宮廷密謀的氣氛。"],
+["J","Jealousy","/ˈdʒeləsi/","嫉妒；猜忌","害怕失去某人或某物而產生的不安情緒。","O, beware, my lord, of jealousy; / It is the green-eyed monster which doth mock / The meat it feeds on.","Othello, Act 3, Scene 3","🟢","Iago 將嫉妒描寫成會反過來折磨人的怪物，預示 Othello 的信任逐漸崩解。","綠色怪物般的陰影覆蓋人物半張臉，背景以深綠與暗紅交錯，表現猜忌逐步擴大的感覺。"],
+["K","King","/kɪŋ/","國王","統治王國的人，也是許多莎劇的重要角色。","Uneasy lies the head that wears a crown.","Henry IV, Part 2, Act 3, Scene 1","♔","這句話呈現國王看似尊貴，實際上必須承擔沉重責任與不安。","國王坐在高背王座上，周圍空間寬闊而冷清；金色只集中在王冠，深褐陰影凸顯權力的孤獨。"],
+["L","Love","/lʌv/","愛；愛情","莎士比亞喜劇與悲劇中反覆出現的主題。","If music be the food of love, play on.","Twelfth Night, Act 1, Scene 1","♥","Orsino 將音樂比作愛情的養分，開場便建立浪漫、感官與情緒交融的氣氛。","兩朵交疊的玫瑰置於古典花園，酒紅與柔金色暈染花瓣，背景以橄欖綠襯托愛情的溫柔。"],
+["M","Madness","/ˈmædnəs/","瘋狂；失常","人物在壓力或情緒下呈現的混亂狀態。","Though this be madness, yet there is method in't.","Hamlet, Act 2, Scene 2","☽","Polonius 察覺 Hamlet 的言行似乎瘋狂，卻又帶有某種邏輯，留下真假難辨的懸念。","人物側影被旋轉的窗格與光影包圍；赭色、灰藍與暗紫交疊，表現理智與混亂的界線。"],
+["N","Noble","/ˈnoʊbəl/","高貴的；貴族","可形容高尚品格，也可指貴族身分。","Some are born great, some achieve greatness, and some have greatness thrust upon 'em.","Twelfth Night, Act 2, Scene 5","⚜","這句以三種方式談論「偉大」，也帶有角色誤讀信件所產生的喜劇效果。","以紋章、金線刺繡與深藍布幔呈現貴族意象；畫面採莊嚴的正面構圖，帶出身分與榮耀。"],
+["O","Oath","/oʊθ/","誓言","鄭重做出的承諾。","I have sworn thee fair, and thought thee bright, / Who art as black as hell, as dark as night.","Sonnet 147","📜","十四行詩中的說話者反省自己曾經相信的誓言與美好形象，呈現愛情中的自欺。","羊皮紙卷軸置於燭台旁，金色封蠟與暗紅桌布形成焦點，象徵承諾的重量與可能的破碎。"],
+["P","Poison","/ˈpɔɪzən/","毒藥；毒物","在悲劇中常象徵危險、秘密與致命後果。","Thus with a kiss I die.","Romeo and Juliet, Act 5, Scene 3","☠","Romeo 的最後一句將愛與死亡並置，濃縮了悲劇中情感與命運的衝突。","小瓶置於石墓前，瓶身泛出暗金光澤；酒紅玫瑰與冷灰石材形成強烈對比，象徵愛與悲劇。"],
+["Q","Queen","/kwiːn/","女王；王后","女性君主，或國王的妻子。","The queen of curds and cream.","The Winter's Tale, Act 4, Scene 4","♕","這是田園場景中的稱呼，帶有節慶與民間生活的親切語氣，並非宮廷正式頭銜。","以花冠與繡金披肩描繪女性角色，背景加入田園花草；暖金、奶油白與葉綠營造節慶感。"],
+["R","Revenge","/rɪˈvendʒ/","復仇","為了回應傷害而採取報復行動。","The time is out of joint. O cursed spite, / That ever I was born to set it right!","Hamlet, Act 1, Scene 5","⚔","Hamlet 認為世界秩序已經錯亂，自己被迫承擔讓一切回到正軌的責任。","斷裂的王冠與交叉長劍置於畫面中央，暗紅天空與沉重陰影表現復仇帶來的失序。"],
+["S","Sorrow","/ˈsɑːroʊ/","悲傷；哀痛","失去或痛苦所帶來的深沉情緒。","Give sorrow words; the grief that does not speak / Whispers the o'er-fraught heart and bids it break.","Macbeth, Act 4, Scene 3","🌧","Malcolm 提醒悲傷需要被說出來，呈現表達情緒與承受失落的重要性。","人物坐在雨中的石階，灰藍天空與柔淡銀光形成安靜氛圍，細密筆觸描繪雨水與哀傷。"],
+["T","Throne","/θroʊn/","王座","象徵王位、統治權與權力。","Now is the winter of our discontent / Made glorious summer by this sun of York.","Richard III, Act 1, Scene 1","♜","Richard 以季節轉換比喻政治局勢改變，開場便展現權力敘事與修辭操控。","空置王座置於高台，拱窗投下金色光束；深綠與赭石色表現王權的莊嚴和爭奪。"],
+["U","Usurp","/juːˈsɜːrp/","篡奪","未經正當權利而奪取他人的地位或權力。","I am determined to prove a villain.","Richard III, Act 1, Scene 1","♟","Richard 的自白揭示他準備以計謀改變權力秩序，與篡奪王位的主題相連。","一隻手伸向王冠，背景有傾斜的王座與棋子；黑褐色陰影配上銳利金光，象徵權力被奪取。"],
+["V","Virtue","/ˈvɜːrtʃuː/","美德；德行","良好的道德品質，例如誠實與勇氣。","The better part of valour is discretion.","Henry IV, Part 1, Act 5, Scene 4","⚜","Falstaff 以機智語氣重新解釋勇氣，讓觀眾思考勇敢與審慎之間的關係。","以天秤、橄欖枝與柔和金光呈現德行；背景採沉穩的橄欖綠和石灰色，象徵平衡與節制。"],
+["W","Wit","/wɪt/","機智；風趣","快速而巧妙地思考或說話的能力。","Brevity is the soul of wit.","Hamlet, Act 2, Scene 2","🪶","Polonius 說出這句話時卻講得冗長，形成反諷，讓「簡潔才是機智」本身成為笑點。","羽毛筆與打開的書卷置於桌面，燭光映在墨水上；金棕與深褐筆觸呼應文字的靈巧。"],
+["X","Xenial","/ˈziːniəl/","好客的；友善待客的","形容主人與客人之間友善、熱情的關係。","I pray you, give her this ring, and tell her / She shall be welcome.","Twelfth Night, Act 5, Scene 1","⌂","這句以「welcome」呼應款待與接納的概念；Xenial 是現代英文詞，並非莎士比亞原文用字。","以敞開的城堡門與桌上麵包、酒杯呈現款待；暖金燭光、赭色石牆營造溫暖而友善的氛圍。"],
+["Y","Youth","/juːθ/","青春；年輕時期","生命中充滿活力、探索與成長的階段。","Wisely and slow; they stumble that run fast.","Romeo and Juliet, Act 2, Scene 3","🌱","Friar Laurence 提醒 Romeo 不要因急切而失去判斷，與年輕角色的衝動形成對照。","初春嫩枝從古老石牆旁伸出，嫩綠與柔金色象徵成長；遠方城堡暗示青春即將面對的世界。"],
+["Z","Zeal","/ziːl/","熱忱；熱情","對某件事抱持強烈的投入與熱愛。","I can no other answer make but thanks, / And thanks, and ever thanks.","Twelfth Night, Act 3, Scene 3","✧","這句以反覆的 thanks 表達強烈感激，可連結到熱忱、投入與真摯情感。","以燃燒的燭火和金色光環作為主視覺，深紅背景襯托光芒，象徵熱情持續燃燒。"]
+];
+const cards=document.getElementById('cards'),nav=document.getElementById('alphabet');let letter='ALL';
+['ALL',...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].forEach(l=>{let b=document.createElement('button');b.textContent=l;b.onclick=()=>{letter=l;document.querySelectorAll('.alphabet button').forEach(x=>x.classList.toggle('active',x===b));render()};nav.appendChild(b)});nav.firstChild.classList.add('active');
+function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){let q=document.getElementById('search').value.toLowerCase().trim();let list=words.filter(w=>(letter==='ALL'||w[0]===letter)&&w.slice(0,7).join(' ').toLowerCase().includes(q));if(document.getElementById('sort').value==='za')list.reverse();cards.innerHTML='';if(!list.length){cards.innerHTML='<div class="empty">沒有找到符合的單字。</div>';return}
+list.forEach(w=>{let c=document.createElement('article');c.className='card';c.innerHTML=`<div class="art"><div class="symbol">${w[7]}</div><div class="artlabel">ILLUMINATED WORD · ${w[0]}</div></div><div class="body"><div class="letter">${w[0]} · VOCABULARY</div><div class="word">${w[1]}</div><div class="pron">${w[2]}</div><div class="meaning">${w[3]}</div><div class="desc">${w[4]}</div><div class="section"><div class="stitle">I. SHAKESPEARE QUOTATION｜莎士比亞原句</div><div class="quote">“${esc(w[5])}”</div><div class="source">— ${w[6]}</div></div><div class="section"><div class="stitle">II. LITERARY NOTE｜文學簡短講解</div><div class="explain">${w[8]}</div></div><div class="section"><div class="stitle">III. PAINTING DESIGN｜油畫設計講解</div><div class="explain">${w[9]}</div></div><div class="actions"><button class="action speak">🔊 聽單字發音</button><button class="action secondary save">☆ 收藏單字</button></div></div>`;c.querySelector('.speak').onclick=()=>{if('speechSynthesis'in window){speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance(w[1]))}};c.querySelector('.save').onclick=e=>{e.currentTarget.textContent=e.currentTarget.textContent.startsWith('☆')?'★ 已收藏':'☆ 收藏單字'};cards.appendChild(c)})}
+document.getElementById('search').addEventListener('input',render);document.getElementById('sort').addEventListener('change',render);render();
+const quiz=[['「王冠；王權」是哪個單字？',['Crown','Sorrow','Wit'],'Crown'],['「嫉妒」是哪個單字？',['Honor','Envy','Youth'],'Envy'],['「機智；風趣」是哪個單字？',['Wit','Fate','Poison'],'Wit'],['「悲傷；哀痛」是哪個單字？',['Zeal','Sorrow','King'],'Sorrow'],['「野心；抱負」是哪個單字？',['Ambition','Virtue','Ghost'],'Ambition']];let qi=0;
+function load(){let x=quiz[qi];document.getElementById('question').textContent=x[0];document.getElementById('feedback').textContent='';let a=document.getElementById('answers');a.innerHTML='';x[1].forEach(v=>{let b=document.createElement('button');b.textContent=v;b.onclick=()=>{let f=document.getElementById('feedback');f.textContent=v===x[2]?'✦ 答對了！':'再想一想，回去看看單字卡吧。';f.style.color=v===x[2]?'#42613c':'#8b3838'};a.appendChild(b)})}
+document.getElementById('next').onclick=()=>{qi=(qi+1)%quiz.length;load()};load();
+</script></body></html>
